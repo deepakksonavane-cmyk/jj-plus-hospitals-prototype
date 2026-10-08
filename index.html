@@ -43,182 +43,136 @@
             --text-dark: #2D3748;
             --text-light: #718096;
             --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow: 0 4px 6px rgba(0,0,0,0.08);
             --transition: all 0.3s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            background: var(--white);
-            padding-bottom: 70px; /* Space for mobile sticky CTA */
-        }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--white); padding-bottom: 70px; }
         a { text-decoration: none; color: inherit; }
         img { max-width: 100%; display: block; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
-        .section-title p { color: var(--text-light); font-size: 1.1rem; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
+        .section-title p { color: var(--text-light); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .btn { padding: 12px 24px; border-radius: 5px; font-weight: 600; transition: var(--transition); cursor: pointer; border: none; font-size: 0.95rem; display: inline-block; }
+        .btn-primary { background: var(--accent); color: var(--white); }
+        .btn-primary:hover { background: #d66c00; transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+        .btn-outline:hover { background: var(--primary); color: var(--white); }
 
-        /* --- HEADER & NAVIGATION --- */
-        header {
-            background: var(--white);
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        /* --- HEADER --- */
+        header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; max-width: 1200px; margin: 0 auto; }
         .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
         .logo span { color: var(--accent); }
-        .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { font-weight: 500; transition: var(--transition); }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { font-weight: 500; transition: var(--transition); font-size: 0.95rem; }
         .nav-links a:hover { color: var(--secondary); }
         .nav-cta { display: flex; gap: 15px; align-items: center; }
-        .btn {
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            font-size: 0.9rem;
-        }
-        .btn-primary { background: var(--accent); color: var(--white); }
-        .btn-primary:hover { background: #d66c00; }
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: var(--white); }
         .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            background: linear-gradient(135deg, rgba(0, 74, 143, 0.9), rgba(0, 168, 232, 0.8)), 
-                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1500') center/cover;
-            color: var(--white);
-            padding: 100px 20px;
-            text-align: center;
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; font-weight: 700; }
+        /* --- HERO --- */
+        .hero { background: linear-gradient(135deg, rgba(0, 74, 143, 0.92), rgba(0, 168, 232, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1500') center/cover; color: var(--white); padding: 100px 20px; text-align: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
         .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; opacity: 0.95; }
         .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .hero-btns .btn { padding: 15px 30px; font-size: 1rem; }
 
         /* --- TRUST BADGES --- */
-        .trust-badges {
-            background: var(--white);
-            padding: 30px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            position: relative;
-            z-index: 10;
-            margin-top: -40px;
-            border-radius: 10px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            text-align: center;
-        }
+        .trust-badges { background: var(--white); padding: 30px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: relative; z-index: 10; margin-top: -40px; border-radius: 10px; max-width: 1000px; margin-left: auto; margin-right: auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center; }
         .badge-item i { font-size: 2rem; color: var(--secondary); margin-bottom: 10px; }
-        .badge-item h4 { font-size: 1rem; color: var(--text-dark); }
+        .badge-item h4 { font-size: 1rem; color: var(--text-dark); font-weight: 600; }
 
-        /* --- SPECIALTIES --- */
-        .specialties { padding: 80px 0; background: var(--bg-light); }
-        .spec-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .spec-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-bottom: 4px solid transparent;
-        }
-        .spec-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--secondary); }
-        .spec-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
-        .spec-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-
-        /* --- ABOUT / CMD MESSAGE --- */
+        /* --- ABOUT & HISTORY --- */
         .about { padding: 80px 0; }
-        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .about-text h2 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
         .about-text p { margin-bottom: 15px; color: var(--text-light); }
         .about-img { border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
         .about-img img { width: 100%; height: 400px; object-fit: cover; }
+        .mission-vision { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .mv-card { background: var(--bg-light); padding: 20px; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .mv-card h4 { color: var(--primary); margin-bottom: 10px; }
+
+        /* --- SPECIALTIES --- */
+        .specialties { padding: 80px 0; background: var(--bg-light); }
+        .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .spec-card { background: var(--white); padding: 25px; border-radius: 10px; text-align: center; box-shadow: var(--shadow); transition: var(--transition); border-bottom: 4px solid transparent; }
+        .spec-card:hover { transform: translateY(-5px); border-bottom: 4px solid var(--secondary); }
+        .spec-card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+        .spec-card h3 { font-size: 1.05rem; color: var(--text-dark); font-weight: 600; }
+
+        /* --- INFRASTRUCTURE --- */
+        .infrastructure { padding: 80px 0; }
+        .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .infra-card { background: var(--white); padding: 25px; border-radius: 10px; box-shadow: var(--shadow); border: 1px solid #eee; }
+        .infra-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+        .infra-card h3 i { color: var(--accent); }
+        .infra-card p { color: var(--text-light); font-size: 0.9rem; }
 
         /* --- DOCTORS --- */
         .doctors { padding: 80px 0; background: var(--bg-light); }
-        .doc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .doc-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
+        .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .doc-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
         .doc-card:hover { transform: translateY(-5px); }
-        .doc-img { height: 250px; background: #ddd; overflow: hidden; }
+        .doc-img { height: 220px; background: #e2e8f0; overflow: hidden; }
         .doc-img img { width: 100%; height: 100%; object-fit: cover; }
         .doc-info { padding: 20px; text-align: center; }
-        .doc-info h3 { color: var(--primary); margin-bottom: 5px; }
-        .doc-info p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 15px; }
+        .doc-info h3 { color: var(--primary); margin-bottom: 5px; font-size: 1.1rem; }
+        .doc-info .specialty { font-size: 0.9rem; color: var(--accent); font-weight: 500; margin-bottom: 5px; }
+        .doc-info .qual { font-size: 0.85rem; color: var(--text-light); margin-bottom: 15px; }
 
-        /* --- CONTACT / FOOTER --- */
+        /* --- MEDICAL TOURISM --- */
+        .medical-tourism { padding: 80px 0; background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%); }
+        .tourism-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .tourism-card { background: var(--white); padding: 30px; border-radius: 10px; text-align: center; box-shadow: var(--shadow); }
+        .tourism-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        .tourism-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); }
+        .tourism-card p { font-size: 0.9rem; color: var(--text-light); }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials { padding: 80px 0; background: var(--white); }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .test-card { background: var(--bg-light); padding: 30px; border-radius: 10px; position: relative; border-left: 4px solid var(--secondary); }
+        .test-card i { color: var(--secondary); font-size: 1.5rem; margin-bottom: 15px; opacity: 0.5; }
+        .test-card p { font-style: italic; color: var(--text-dark); margin-bottom: 20px; font-size: 0.95rem; }
+        .test-card h4 { color: var(--primary); font-weight: 600; }
+
+        /* --- MANAGEMENT & CSR --- */
+        .mgmt-csr { padding: 80px 0; background: var(--bg-light); }
+        .mgmt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .mgmt-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .mgmt-item { background: var(--white); padding: 20px; border-radius: 8px; box-shadow: var(--shadow); text-align: center; }
+        .mgmt-item h4 { color: var(--primary); margin-bottom: 5px; }
+        .mgmt-item p { font-size: 0.9rem; color: var(--text-light); }
+        .csr-content h3 { color: var(--primary); margin-bottom: 15px; }
+        .csr-content ul { list-style: none; margin-bottom: 20px; }
+        .csr-content ul li { padding: 5px 0; color: var(--text-light); font-size: 0.95rem; }
+        .csr-content ul li i { color: var(--accent); margin-right: 10px; }
+
+        /* --- CONTACT --- */
         .contact { padding: 80px 0; background: var(--primary); color: var(--white); }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         .contact-info h2 { margin-bottom: 20px; }
         .contact-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
         .contact-item i { font-size: 1.2rem; color: var(--secondary); margin-top: 5px; }
-        
+        .contact-form { background: var(--white); padding: 30px; border-radius: 10px; color: var(--text-dark); }
+        .contact-form h3 { margin-bottom: 20px; color: var(--primary); }
+        .contact-form input, .contact-form select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px; font-family: inherit; }
+
+        /* --- FOOTER --- */
         footer { background: #002244; color: #ccc; padding: 30px 0; text-align: center; font-size: 0.9rem; }
-        footer a { color: var(--secondary); }
 
         /* --- MOBILE STICKY CTA --- */
-        .mobile-sticky-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 999;
-            padding: 10px;
-            gap: 10px;
-        }
-        .mobile-sticky-cta a {
-            flex: 1;
-            text-align: center;
-            padding: 12px;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+        .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--white); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 999; padding: 10px; gap: 10px; }
+        .mobile-sticky-cta a { flex: 1; text-align: center; padding: 12px; border-radius: 5px; font-weight: 600; font-size: 0.9rem; }
         .btn-call { background: var(--primary); color: var(--white); }
         .btn-book-mobile { background: var(--accent); color: var(--white); }
 
-        /* --- RESPONSIVE DESIGN --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
-            .about-content, .contact-grid { grid-template-columns: 1fr; }
+            .about-grid, .contact-grid, .mgmt-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
         }
         @media (max-width: 768px) {
@@ -229,6 +183,7 @@
             .hero h1 { font-size: 1.8rem; }
             .section-title h2 { font-size: 1.8rem; }
             .trust-badges { margin-top: 20px; }
+            .mission-vision, .mgmt-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -240,7 +195,7 @@
             <div class="logo">JJ <span>Plus</span> Hospitals</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#specialties">Specialties</a></li>
                 <li><a href="#doctors">Doctors</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -253,7 +208,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="container">
             <h1>World-Class Multispecialty & Superspecialty Care in Chhatrapati Sambhajinagar</h1>
@@ -267,84 +222,77 @@
 
     <!-- TRUST BADGES -->
     <div class="trust-badges">
-        <div class="badge-item">
-            <i class="fas fa-award"></i>
-            <h4>NABH Certified</h4>
-        </div>
-        <div class="badge-item">
-            <i class="fas fa-certificate"></i>
-            <h4>ISO 9001:2015</h4>
-        </div>
-        <div class="badge-item">
-            <i class="fas fa-user-md"></i>
-            <h4>50+ Expert Doctors</h4>
-        </div>
-        <div class="badge-item">
-            <i class="fas fa-procedures"></i>
-            <h4>105+ Beds Facility</h4>
-        </div>
+        <div class="badge-item"><i class="fas fa-award"></i><h4>NABH Certified</h4></div>
+        <div class="badge-item"><i class="fas fa-certificate"></i><h4>ISO 9001:2015</h4></div>
+        <div class="badge-item"><i class="fas fa-user-md"></i><h4>50+ Expert Doctors</h4></div>
+        <div class="badge-item"><i class="fas fa-procedures"></i><h4>105+ Beds Facility</h4></div>
     </div>
+
+    <!-- ABOUT & HISTORY -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>A Vision for Marathwada's Health</h2>
+                    <p>Founded in 2016 by renowned Neurosurgeon <strong>Dr. Jeevan Bhawllal Rajput</strong>, supported by mentor Dr. Sanjay Vijay Patne, and managed by CEO Dr. P.A. Gadge Patil. Our vision was simple: <em>"To Provide the Best Tertiary Care Medical Treatment in the Maharashtra region."</em></p>
+                    <p>Today, with 3 modular operation theaters, advanced Cath Labs, and a team of 50+ dedicated physicians and 200+ healthcare professionals, we deliver compassionate, patient-centered healing close to home.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mv-card">
+                            <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
+                            <p>To deliver world-class care through advanced technology, ensuring authenticity, reliability, and approachability in every patient interaction.</p>
+                        </div>
+                        <div class="mv-card">
+                            <h4><i class="fas fa-eye"></i> Our Vision</h4>
+                            <p>To be a leader in superspecialty healthcare, setting the standard for excellence, trust, and patient well-being in the region.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800" alt="JJ Plus Hospitals Facility">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- SPECIALTIES -->
     <section class="specialties" id="specialties">
         <div class="container">
             <div class="section-title">
                 <h2>Our Key Specialties</h2>
-                <p>Comprehensive care across multiple superspecialties under one roof.</p>
+                <p>Comprehensive 24/7 care across 35+ superspecialties under one roof.</p>
             </div>
             <div class="spec-grid">
-                <div class="spec-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neurosurgery & Spine</h3>
-                    <p>Advanced brain and spine surgeries with Carl Zeiss Microscopes.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Cardiology & CVTS</h3>
-                    <p>State-of-the-art Cath Lab and adult/pediatric heart surgeries.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-bone"></i>
-                    <h3>Orthopedics & Joint Replacement</h3>
-                    <p>Total knee/hip replacements and advanced trauma care.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-baby"></i>
-                    <h3>Pediatrics & NICU/PICU</h3>
-                    <p>Specialized care for newborns and children with advanced ventilators.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-stomach"></i> <!-- Fallback icon -->
-                    <i class="fas fa-stethoscope" style="display:none;"></i>
-                    <i class="fas fa-lungs"></i>
-                    <h3>Gastroenterology</h3>
-                    <p>Advanced endoscopy, colonoscopy, and liver care.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-kidneys"></i>
-                    <h3>Nephrology & Urology</h3>
-                    <p>Comprehensive kidney care, dialysis, and urological surgeries.</p>
-                </div>
+                <div class="spec-card"><i class="fas fa-brain"></i><h3>Neurosurgery & Spine</h3></div>
+                <div class="spec-card"><i class="fas fa-heartbeat"></i><h3>Cardiology & CVTS</h3></div>
+                <div class="spec-card"><i class="fas fa-bone"></i><h3>Orthopedics & Trauma</h3></div>
+                <div class="spec-card"><i class="fas fa-baby"></i><h3>Pediatrics & NICU</h3></div>
+                <div class="spec-card"><i class="fas fa-lungs"></i><h3>Gastroenterology</h3></div>
+                <div class="spec-card"><i class="fas fa-kidneys"></i><h3>Nephrology & Urology</h3></div>
+                <div class="spec-card"><i class="fas fa-ribbon"></i><h3>Medical Oncology</h3></div>
+                <div class="spec-card"><i class="fas fa-female"></i><h3>Obstetrics & Gynecology</h3></div>
+                <div class="spec-card"><i class="fas fa-eye"></i><h3>Ophthalmology</h3></div>
+                <div class="spec-card"><i class="fas fa-head-side-cough"></i><h3>ENT & Pulmonology</h3></div>
+                <div class="spec-card"><i class="fas fa-hand-holding-medical"></i><h3>Plastic Surgery</h3></div>
+                <div class="spec-card"><i class="fas fa-tooth"></i><h3>Diabetic Care</h3></div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT / CMD MESSAGE -->
-    <section class="about" id="about">
+    <!-- INFRASTRUCTURE -->
+    <section class="infrastructure">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>A Vision for Marathwada's Health</h2>
-                    <p>Founded in 2016 by renowned Neurosurgeon Dr. Jeevan Rajput, JJ Plus Hospitals was built on a single vision: <em>To provide the best tertiary and quaternary care in the Marathwada region.</em></p>
-                    <p>Today, with 3 modular operation theaters, advanced Cath Labs, and a team of 50+ dedicated physicians, we don’t just treat illnesses—we deliver compassionate, patient-centered healing close to home.</p>
-                    <p style="font-weight: 600; color: var(--primary); margin-top: 20px;">
-                        "I believe the future for Chhatrapati Sambhajinagar and the broader Marathwada region is a vision of growth and progress. To that end, I will strive to assure a strong, accessible, and world-class healthcare foundation for our community."
-                        <br><span style="font-weight: 400; color: var(--text-light); font-size: 0.9rem;">- Dr. Jeevan Rajput, CMD & Neurosurgeon</span>
-                    </p>
-                </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800" alt="JJ Plus Hospitals Facility">
-                </div>
+            <div class="section-title">
+                <h2>Advanced Infrastructure & Technology</h2>
+                <p>Equipped with world-class medical technology to ensure precise diagnosis and treatment.</p>
+            </div>
+            <div class="infra-grid">
+                <div class="infra-card"><h3><i class="fas fa-x-ray"></i> Cath Lab</h3><p>Advanced facility for minimally invasive cardiac and vascular procedures, angiography, and stent placements.</p></div>
+                <div class="infra-card"><h3><i class="fas fa-microscope"></i> Carl Zeiss Microscope</h3><p>High-precision optical device for intricate neurosurgery and ophthalmology procedures.</p></div>
+                <div class="infra-card"><h3><i class="fas fa-heart"></i> Heart-Lung Machine</h3><p>Critical cardiopulmonary support for complex open-heart surgeries and valve replacements.</p></div>
+                <div class="infra-card"><h3><i class="fas fa-procedures"></i> 3 Modular OTs</h3><p>State-of-the-art modular operation theaters ensuring sterile and safe surgical environments.</p></div>
+                <div class="infra-card"><h3><i class="fas fa-laptop-medical"></i> Philips Monitoring</h3><p>Centralized real-time tracking of patient vital signs across ICU and critical care units.</p></div>
+                <div class="infra-card"><h3><i class="fas fa-ambulance"></i> Maquet Ventilators</h3><p>Advanced respiratory support for adult, pediatric, and neonatal critical care.</p></div>
             </div>
         </div>
     </section>
@@ -354,78 +302,138 @@
         <div class="container">
             <div class="section-title">
                 <h2>Meet Our Expert Doctors</h2>
-                <p>Highly qualified specialists dedicated to your health and well-being.</p>
+                <p>A team of 50+ highly qualified specialists dedicated to your health.</p>
             </div>
             <div class="doc-grid">
                 <div class="doc-card">
-                    <div class="doc-img">
-                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=500" alt="Dr. Jeevan Rajput">
-                    </div>
+                    <div class="doc-img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=500" alt="Dr. Jeevan Rajput"></div>
                     <div class="doc-info">
                         <h3>Dr. Jeevan Rajput</h3>
-                        <p>Chief Consultant Neurosurgeon & Spine Surgeon</p>
-                        <a href="#contact" class="btn btn-primary" style="width: 100%;">Book Appointment</a>
+                        <p class="specialty">Chief Consultant Neurosurgeon & CMD</p>
+                        <p class="qual">MBBS, MS, MCh (Neurosurgery) | 15+ Years</p>
                     </div>
                 </div>
                 <div class="doc-card">
-                    <div class="doc-img">
-                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=500" alt="Dr. Pankaj P. Joshi">
-                    </div>
+                    <div class="doc-img"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=500" alt="Dr. Pankaj P. Joshi"></div>
                     <div class="doc-info">
                         <h3>Dr. Pankaj P. Joshi</h3>
-                        <p>Chief Consultant Interventional Cardiologist</p>
-                        <a href="#contact" class="btn btn-primary" style="width: 100%;">Book Appointment</a>
+                        <p class="specialty">Chief Interventional Cardiologist (HOD)</p>
+                        <p class="qual">MBBS, MD, DM, FSCAI | 15+ Years</p>
                     </div>
                 </div>
                 <div class="doc-card">
-                    <div class="doc-img">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=500" alt="Dr. Neelam Rajput">
-                    </div>
+                    <div class="doc-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=500" alt="Dr. Neelam Rajput"></div>
                     <div class="doc-info">
                         <h3>Dr. Neelam Rajput</h3>
-                        <p>Managing Director & Chief Consultant Pathologist</p>
-                        <a href="#contact" class="btn btn-primary" style="width: 100%;">Book Appointment</a>
+                        <p class="specialty">Managing Director & Chief Pathologist</p>
+                        <p class="qual">MBBS, MD (Pathology) | 10+ Years</p>
                     </div>
                 </div>
+                <div class="doc-card">
+                    <div class="doc-img"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=500" alt="Dr. Sanjay Patne"></div>
+                    <div class="doc-info">
+                        <h3>Dr. Sanjay Patne</h3>
+                        <p class="specialty">Senior Physician & Toxicologist</p>
+                        <p class="qual">MBBS, MD (Medicine) | 25+ Years</p>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=500" alt="Dr. Hrishikesh Mandhane"></div>
+                    <div class="doc-info">
+                        <h3>Dr. Hrishikesh Mandhane</h3>
+                        <p class="specialty">Chief Gynecologist & Infertility Expert</p>
+                        <p class="qual">MBBS, MS, DNB, FRM | 10+ Years</p>
+                    </div>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-img"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=500" alt="Dr. Prashant Gadge"></div>
+                    <div class="doc-info">
+                        <h3>Dr. Prashant Gadge Patil</h3>
+                        <p class="specialty">CEO & Clinical Coordinator</p>
+                        <p class="qual">Dip. Preventive Cardiology, MBA | 15+ Years</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#contact" class="btn btn-outline">View All 50+ Doctors</a>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
-        <!-- MEDICAL TOURISM / OUTSTATION PATIENTS -->
-    <section class="medical-tourism" style="padding: 80px 0; background: #f0f7ff;">
+    <!-- MEDICAL TOURISM -->
+    <section class="medical-tourism">
         <div class="container">
             <div class="section-title">
                 <h2>International & Outstation Patient Services</h2>
                 <p>World-class healthcare in Chhatrapati Sambhajinagar, with seamless end-to-end support for travelers.</p>
             </div>
-            <div class="spec-grid">
-                <div class="spec-card">
-                    <i class="fas fa-video" style="color: var(--accent);"></i>
-                    <h3>Free Teleconsultation</h3>
-                    <p>Connect with our top specialists via video call before you travel. Get a preliminary diagnosis and treatment plan.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-file-medical-alt" style="color: var(--accent);"></i>
-                    <h3>Visa & Documentation</h3>
-                    <p>We provide official Medical Visa Invitation Letters and assist with all necessary medical documentation.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-plane-arrival" style="color: var(--accent);"></i>
-                    <h3>Airport Pickup & Local Stay</h3>
-                    <p>Complimentary pickup from Chhatrapati Sambhajinagar (IXU) or Mumbai Airport, plus partnerships with nearby hotels for family stays.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-language" style="color: var(--accent);"></i>
-                    <h3>Dedicated Care Coordinator</h3>
-                    <p>A single point of contact to assist you in English, Hindi, Marathi, or Arabic throughout your entire treatment journey.</p>
-                </div>
+            <div class="tourism-grid">
+                <div class="tourism-card"><i class="fas fa-video"></i><h3>Free Teleconsultation</h3><p>Connect with our top specialists via video call before you travel for a preliminary treatment plan.</p></div>
+                <div class="tourism-card"><i class="fas fa-file-medical-alt"></i><h3>Visa & Documentation</h3><p>We provide official Medical Visa Invitation Letters and assist with all necessary medical documentation.</p></div>
+                <div class="tourism-card"><i class="fas fa-plane-arrival"></i><h3>Airport Pickup & Stay</h3><p>Complimentary pickup from IXU or Mumbai Airport, plus partnerships with nearby hotels for family stays.</p></div>
+                <div class="tourism-card"><i class="fas fa-language"></i><h3>Dedicated Care Coordinator</h3><p>A single point of contact to assist you in English, Hindi, Marathi, or Arabic throughout your journey.</p></div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#contact" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Request a Free Treatment Estimate</a>
             </div>
         </div>
     </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Patient Testimonials</h2>
+                <p>Hear from the families who trusted us with their care.</p>
+            </div>
+            <div class="test-grid">
+                <div class="test-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"We planned for Mumbai for my brother's operation but a friend recommended JJ PLUS. We got excellent treatment at par in Aurangabad itself. The ICU management is very excellent."</p>
+                    <h4>- Dongarsing Gomladu</h4>
+                </div>
+                <div class="test-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Very ethical and technologically advanced clinical care. This hospital is setting an example of excellent health care to the Marathwada area. Our health is in safe hands."</p>
+                    <h4>- Sarla Pawar</h4>
+                </div>
+                <div class="test-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"My wife was admitted for a severe Brain Tumor. It was successfully removed and she is absolutely normal now. Words cannot express our gratitude to Dr. Jeevan and the team."</p>
+                    <h4>- Lakshman More</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANAGEMENT & CSR -->
+    <section class="mgmt-csr">
+        <div class="container">
+            <div class="mgmt-grid">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.5rem;">Leadership Team</h3>
+                    <div class="mgmt-list">
+                        <div class="mgmt-item"><h4>Dr. Jeevan Rajput</h4><p>Chief Managing Director</p></div>
+                        <div class="mgmt-item"><h4>Dr. Neelam Rajput</h4><p>Managing Director</p></div>
+                        <div class="mgmt-item"><h4>Mrs. Sunita Rajput</h4><p>Director</p></div>
+                        <div class="mgmt-item"><h4>Dr. Prashant Gadge</h4><p>CEO</p></div>
+                    </div>
+                </div>
+                <div class="csr-content">
+                    <h3><i class="fas fa-hands-helping" style="color: var(--accent);"></i> CSR: Neuron International Foundation</h3>
+                    <p style="margin-bottom: 15px; color: var(--text-light);">NIF is dedicated to improving living standards through innovative rehabilitation services.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Enhancing rural health facilities & ambulance services.</li>
+                        <li><i class="fas fa-check-circle"></i> Supporting government schools and talented students.</li>
+                        <li><i class="fas fa-check-circle"></i> Guiding rural agricultural businesses.</li>
+                        <li><i class="fas fa-check-circle"></i> Providing medical judicial assistance for patients.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-grid">
@@ -435,46 +443,29 @@
                     
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Address</strong><br>
-                            Opposite District Court, Near Baba Petrol Pump,<br>
-                            Adalat Road, Chhatrapati Sambhajinagar (Aurangabad),<br>
-                            Maharashtra - 431001
-                        </div>
+                        <div><strong>Address</strong><br>Opposite District Court, Near Baba Petrol Pump, Adalat Road, Chhatrapati Sambhajinagar (Aurangabad), Maharashtra - 431001</div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Emergency & Appointments</strong><br>
-                            <a href="tel:02406666000" style="color: white; font-weight: 600;">0240-6666000</a>
-                        </div>
+                        <div><strong>Emergency & Appointments</strong><br><a href="tel:02406666000" style="color: white; font-weight: 600;">0240-6666000</a></div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email Us</strong><br>
-                            <a href="mailto:care@jjplushospitals.com" style="color: white;">care@jjplushospitals.com</a>
-                        </div>
+                        <div><strong>Email Us</strong><br><a href="mailto:care@jjplushospitals.com" style="color: white;">care@jjplushospitals.com</a></div>
                     </div>
                 </div>
-                <div class="contact-form" style="background: white; padding: 30px; border-radius: 10px; color: var(--text-dark);">
-                    <h3 style="margin-bottom: 20px; color: var(--primary);">Book an Appointment</h3>
+                <div class="contact-form">
+                    <h3>Book an Appointment</h3>
                     <form>
-                        <div style="margin-bottom: 15px;">
-                            <input type="text" placeholder="Your Name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit;">
-                        </div>
-                        <div style="margin-bottom: 15px;">
-                            <input type="tel" placeholder="Phone Number" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit;">
-                        </div>
-                        <div style="margin-bottom: 20px;">
-                            <select style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; color: #718096;">
-                                <option>Select Specialty</option>
-                                <option>Neurosurgery</option>
-                                <option>Cardiology</option>
-                                <option>Orthopedics</option>
-                                <option>General Medicine</option>
-                            </select>
-                        </div>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                        <select>
+                            <option>Select Specialty</option>
+                            <option>Neurosurgery</option>
+                            <option>Cardiology</option>
+                            <option>Orthopedics</option>
+                            <option>General Medicine</option>
+                        </select>
                         <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1rem;">Request Appointment</button>
                     </form>
                 </div>
@@ -485,7 +476,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 JJ Plus Hospitals Pvt. Ltd. All Rights Reserved. | Designed for Excellence in Healthcare.</p>
+            <p>&copy; 2026 JJ Plus Hospitals Pvt. Ltd. All Rights Reserved. | NABH & ISO 9001:2015 Certified.</p>
         </div>
     </footer>
 
@@ -496,14 +487,11 @@
     </div>
 
     <script>
-        // Simple smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if(target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
